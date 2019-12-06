@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>属性z-index的使用</title>
+	<style>
+		div{
+			height:100px;
+			width: 100px;
+			position:fixed;
+		}
+		.d1{
+			top:100px;
+			left:100px;
+			background:gray;
+			/* d1是灰块，d2是黑块
+				如果没有z-index，黑块会压住灰块，因为html结构中，d2在d1后面，
+			而后面的定位元素会压住前面的定位元素。
+			 */
+			z-index:1;
+		}
+		.d2{
+			top:150px;
+			left:150px;
+			background:black;
+		}
+	</style>
+</head>
+<body>
+	<div class="d1"></div>
+	<div class="d2"></div>
+</body>
+</html>
