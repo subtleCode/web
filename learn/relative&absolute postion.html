@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>绝对定位于相对定位的配合使用</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		.box{
+			background:gray;
+			height:400px;
+			width:80%;
+			min-width: 1000px;
+			margin:100px auto;
+		}
+		.box ul{
+			list-style:none;
+		}
+		.box ul li{
+			height:240px;
+			width:18%;
+			background:black;
+			margin:80px 1%;
+			float:left;
+			position:relative;
+		}
+		.box ul li span{
+			display:block;
+			height:50px;
+			width:50px;
+			background: white;
+			position:absolute;
+			left:20px;
+			top:-20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul>
+			<li><span></span></li>
+			<li><span></span></li>
+			<li><span></span></li>
+			<li><span></span></li>
+			<li><span></span></li>
+		</ul>
+	</div>
+</body>
+</html>
