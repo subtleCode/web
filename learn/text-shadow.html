@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>文本阴影</title>
+	<style>
+		p{
+			text-align:center;
+			font-size:60px;
+			font-weight:bold;
+		}
+		p:nth-child(1){
+			text-shadow:4px 4px 2px gray;
+		}
+		p:nth-child(2){
+			text-shadow:
+				4px 4px gray,
+				6px 6px #c7baba,
+				8px 9px black;
+		}
+	</style>
+</head>
+<body>
+	<p>你好</p>
+	<p>世界</p>
+</body>
+</html>
