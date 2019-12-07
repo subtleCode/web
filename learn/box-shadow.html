@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>盒子阴影</title>
+	<style>
+		.box{
+			margin:100px auto;
+			height:200px;
+			width:200px;
+			background: skyblue;
+			/* 
+				第三个px：模糊度
+				第四个px：阴影范围
+				它们可以省略
+			 */
+			/*box-shadow:4px 4px 2px 2px #48a4ca;*/
+
+			/* 多个阴影列表使用逗号分隔 */
+			box-shadow:
+				3px 3px red,
+				6px 6px gray,
+				9px 9px black;
+				
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+
+	</div>
+</body>
+</html>
