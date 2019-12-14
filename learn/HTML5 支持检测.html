@@ -15,49 +15,41 @@
 			document.getElementById("yes").style.color = yescolor;
 			document.getElementById("no").style.color = nocolor;
 
-			/* 检测Canvas画布 */
-			setColor("canvas",Modernizr.canvas);
-			/* 检测CanvasText画布文本 */
-			setColor("canvastext",Modernizr.canvastext);
-			/* 视频 */
-			setColor("video",Modernizr.video);
-			/* ogg格式视频 */
-			setColor("ogg",Modernizr.video.ogg);
-			/* h264 */
-			setColor("h264",Modernizr.video.h264);
-			/* localstorage 本地存储 */
-			setColor("localstorage",Modernizr.localstorage);
-			/* webworkers 多线程*/
-			setColor("webworkers",Modernizr.webworkers);
-			/* applicationcache 本地应用*/
-			setColor( "applicationcache",Modernizr.applicationcache );
-			/* geolocation 定位*/
-			setColor("geolocation",Modernizr.geolocation);
+			/* 需要检测的项 */
+			var list = [
+				"canvas", //画布
+				"canvastext", //画布文本
+				"video", //视频
+				"ogg", //ogg格式视频
+				"h264", //视频格式
+				"localstorage", //本地存储
+				"webworkers", //多线程
+				"applicationcache", //本地应用
+				"geolocation", //定位
+				//输入框
+				"search", //搜索框
+				"number", //数字框
+				"range",
+				"color",
+				"tel",
+				"url",
+				"email",
+				"date",
+				"month",
+				"week",
+				"time",
+				"datetime",
+				"datetimelocal",
+				"placeholder", //占位文本框
+				"autofocus", //自动聚焦
+				"microdate" //微数据
+			];
+			for(var i=0;i<list.length;i++){
+				setColor(list[i],eval( "Modernizr."+list[i] ));
+			}
 
-			/* 输入框类型 */
-			setColor("search",Modernizr.search);
-			setColor("number",Modernizr.number);
-			setColor("range",Modernizr.range);
-			setColor("color",Modernizr.color);
-			setColor("tel",Modernizr.tel);
-			setColor("url",Modernizr.url);
-			setColor("email",Modernizr.email);
-			setColor("date",Modernizr.date);
-			setColor("month",Modernizr.month);
-			setColor("week",Modernizr.week);
-			setColor("time",Modernizr.time);
-			setColor("datetime",Modernizr.datetime);
-			setColor("datetime-local",Modernizr.datetimelocal);
-
-			/* placeholder 占位文本框 */
-			setColor("placeholder",Modernizr.placeholder);
-
-			/* autofocus 表单自动聚焦 */
-			setColor("autofocus",Modernizr.input.autofocus);
-			setColor("microdate",Modernizr.microdate);
 		}
-
-		/* 根据传入的元素ID与检车结果改变字体颜色 */
+		/* 根据传入的元素ID与检测结果改变字体颜色 */
 		setColor = function(elementId,boolean){
 			if(boolean){
 				document.getElementById(elementId).style.color = yescolor;
@@ -101,7 +93,7 @@
 		<h3 id="week">week - 星期</h3>
 		<h3 id="time">time - 时间戳输入框</h3>
 		<h3 id="datetime">datetime - 精确时间日期输入框</h3>
-		<h3 id="datetime-local">datetime-local - 当地日期和时间输入框</h3>
+		<h3 id="datetimelocal">datetimelocal - 当地日期和时间输入框</h3>
 	</h2>	
 	<h2 id="placeholder">placeholder - 占位文本框</h2>
 	<h2 id="autofocus">autofocus - 表单自动聚焦</h2>
