@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HTML5支持检测</title>
+	<script src="js/modernizr.js"></script>
+	<script>
+		/* 如果浏览器不支持某个HTML5特性将插入红色的特性名，支持则插入绿色的特性名 */
+		/* 定义支持颜色与不支持颜色 */
+		var yescolor = "green";
+		var nocolor = "red";
+
+		window.onload = function(){
+			/* 设置头部说明的颜色 */
+			document.getElementById("yes").style.color = yescolor;
+			document.getElementById("no").style.color = nocolor;
+
+			/* 检测Canvas画布 */
+			setColor("canvas",Modernizr.canvas);
+			/* 检测CanvasText画布文本 */
+			setColor("canvastext",Modernizr.canvastext);
+			/* 视频 */
+			setColor("video",Modernizr.video);
+			/* ogg格式视频 */
+			setColor("ogg",Modernizr.video.ogg);
+			/* h264 */
+			setColor("h264",Modernizr.video.h264);
+			/* localstorage 本地存储 */
+			setColor("localstorage",Modernizr.localstorage);
+			/* webworkers 多线程*/
+			setColor("webworkers",Modernizr.webworkers);
+			/* applicationcache 本地应用*/
+			setColor( "applicationcache",Modernizr.applicationcache );
+			/* geolocation 定位*/
+			setColor("geolocation",Modernizr.geolocation);
+
+			/* 输入框类型 */
+			setColor("search",Modernizr.search);
+			setColor("number",Modernizr.number);
+			setColor("range",Modernizr.range);
+			setColor("color",Modernizr.color);
+			setColor("tel",Modernizr.tel);
+			setColor("url",Modernizr.url);
+			setColor("email",Modernizr.email);
+			setColor("date",Modernizr.date);
+			setColor("month",Modernizr.month);
+			setColor("week",Modernizr.week);
+			setColor("time",Modernizr.time);
+			setColor("datetime",Modernizr.datetime);
+			setColor("datetime-local",Modernizr.datetimelocal);
+
+			/* placeholder 占位文本框 */
+			setColor("placeholder",Modernizr.placeholder);
+
+			/* autofocus 表单自动聚焦 */
+			setColor("autofocus",Modernizr.input.autofocus);
+			setColor("microdate",Modernizr.microdate);
+		}
+
+		/* 根据传入的元素ID与检车结果改变字体颜色 */
+		setColor = function(elementId,boolean){
+			if(boolean){
+				document.getElementById(elementId).style.color = yescolor;
+			}else{
+				document.getElementById(elementId).style.color = yescolor;
+			}
+		}
+	</script>
+	<style>
+		h2{
+			text-transform:capitalize;
+		}
+		h3{
+			margin-left: 20px;
+		}
+	</style>
+</head>
+<body>
+	<h2><span id="no">红色</span>表示不支持，<span id="yes">绿色</span>表示支持</h2>
+	<hr />
+	<h2 id="canvas">Canvas - 画布</h2>
+	<h2 id="canvastext">Canvastext - 画布文本</h2>
+	<h2 id="video">Video - 视频
+		<h3 id="ogg">ogg格式视频</h3>
+		<h3 id="h264">h264格式视频</h3>
+	</h2>
+	<h2 id="localstorage">Localstorage - 本地存储</h2>
+	<h2 id="webworkers">Webworkers - 多线程</h2>
+	<h2 id="applicationcache">applicationcache - 本地应用</h2>
+	<h2 id="geolocation">geolocation - 定位</h2>
+	<h2>输入框类型
+		<h3 id="search">search - 搜索框</h3>
+		<h3 id="number">number - 数字框</h3>
+		<h3 id="range">range - 范围选择滑动块</h3>
+		<h3 id="color">color - 颜色选择器</h3>
+		<h3 id="tel">tel - 电话号码输入框</h3>
+		<h3 id="url">url - 网址输入框</h3>
+		<h3 id="email">email - 邮箱地址</h3>
+		<h3 id="date">date - 日期</h3>
+		<h3 id="month">month - 月份</h3>
+		<h3 id="week">week - 星期</h3>
+		<h3 id="time">time - 时间戳输入框</h3>
+		<h3 id="datetime">datetime - 精确时间日期输入框</h3>
+		<h3 id="datetime-local">datetime-local - 当地日期和时间输入框</h3>
+	</h2>	
+	<h2 id="placeholder">placeholder - 占位文本框</h2>
+	<h2 id="autofocus">autofocus - 表单自动聚焦</h2>
+	<h2 id="microdate">microdate - 微数据</h2>
+</body>
+</html>
