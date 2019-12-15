@@ -7,11 +7,15 @@ body{
 	font-size:14px;
 	color: #444;
 	background:#f9f9f9;
+	line-height: 1.7;
 }
 a{
 	text-decoration: none;
 }
-
+img{
+	display: block;
+	max-width: 100%;
+}
 
 /* 内容居中 */
 .container{
@@ -108,13 +112,12 @@ a{
 	float: left;
 	border:0;
 	padding: 10px;
-	outline: 0; /* 取消文本框聚焦时的默认样式 */
 }
 .header .search-bar input{
 	width: 80%;
 }
 .header .search-bar input:focus{
-	outline: 0; /* 取消文本框聚焦时的默认样式 */
+	outline: 0; /* 取消聚焦轮廓 */
 	box-shadow:0px 0px 2px 2px rgba(0,0,0,.3) inset; 
 }
 .header .search-bar button{
@@ -137,13 +140,69 @@ a{
 	color:#dd182b;
 }
 
+/* 主导购区 */
+.main-promote{
+	background:#dedede;
+}
+.main-promote .cat{
+	background: #6e6568;
+	color: white;
+}
+.main-promote .item{
+	text-align: center;
+	padding:20px 0px;
+}
+.main-promote .item:hover{
+	background: rgba(0,0,0,.3);
+}
 
+.main-promote .info{
+	padding: 10px;
+	background:#fff;
+}
+.main-promote .info .face{
+	line-height: 40px;
+}
+.main-promote .info .face .img{
+	width: 70px;
+	height: 70px;
+	background:#6e6568;
+	border-radius: 50%;
+}
+.main-promote .info > *{
+	margin-bottom: 10px;
+}
 
+/* 次导购区 */
+.cat-promote .title{
+	font-size:22px;
+}
+.cat-promote .title:before{
+	content: "";
+	border:3px solid #dd182b;
+	margin-right: 10px;
+}
+.cat-promote .content > div{
+	padding: 10px;
+}
+.cat-promote .content .item{
+	height: 300px;
+	background:#2d9fce;
+}
+.cat-promote:nth-child(2)  .content .item{
+	background-color: #4e31d3;
+}
+.cat-promote:nth-child(3)  .content .item{
+	background:#e52424;
+}
 
-
-
-
-
-
-
+/* 页脚 */
+.footer{
+	background:#dedede;
+	text-align: center;
+	padding: 20px 0px;
+	margin-top: 20px;
+}
+.footer a{
+	padding: 0px 5px;
 }
