@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test</title>
+	<style type="text/css">
+		img{
+			
+		}
+	</style>
+</head>
+<body>
+	<img src="1.png" />
+</body>
+</html>
