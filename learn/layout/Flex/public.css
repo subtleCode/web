@@ -1,0 +1,16 @@
+.container {
+	display: flex;
+	border: 1px solid red;
+	margin: 20px;
+}
+.item {
+	width: 50px;
+	height: 50px;
+	background-color: grey;
+}
+.wItem{
+	width: 100px;
+}
+.hItem{
+	height: 100px;
+}
