@@ -12,20 +12,6 @@
 		<li><a href="images/ef4136.png" title="#ef4136" onclick="showPic(this);return false;">红绯</a></li>
 		<li><a href="images/d2553d.png" title="#d2553d" onclick="showPic(this);return false;">不知</a></li>
 	</ul>
-	<!--
-		预期效果：
-			点击链接不会跳转到另一个窗口
-			点击链接后同时看到图片和图片清单
-			在图片底部显示它的十六进制色值
-		达成方式：
-			通过增加一个 占位符图片在页面上预留一个浏览区域
-			点击链接跳转窗口，拦截这个网页的默认行为
-				onclick中return false完成
-			点击链接时，把占位符图片替换为链接对应的图片
-				onclick调用showPic()完成
-			点击链接时显示色值也由showPic()函数完成	
-	-->
-	<!-- This is a placeholder image -->
 	<img id="placeholder"src="images/placeholder.png" />
 	<h2>
 		<p id="description">Color value of selected image</p>
