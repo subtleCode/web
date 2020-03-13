@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>背景渐变</title>
+	<style>
+		div {
+			margin: 20px auto;
+			height: 180px;
+			width: 180px;
+			border:1px solid black;
+		}
+
+		.gradient1,.gradient2,.gradient3{
+			display:inline-block;
+		}
+		.gradient1 {background: linear-gradient(red,blue);}
+		.gradient2 {background: linear-gradient(to right,red,blue);}
+		.gradient3 {background: linear-gradient(120deg,red,blue);}
+
+	</style>
+</head>
+<body>
+	<div class="gradient1"></div>
+	<div class="gradient2"></div>
+	<div class="gradient3"></div>
+</body>
+</html>

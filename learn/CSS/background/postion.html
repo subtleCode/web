@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>背景图片位置</title>
+	<style type="text/css">
+		p {
+			width: 1000px;
+			height: 360px;
+			margin: 20px auto;
+			padding: 10px;
+			color: red;
+			border: 5px solid skyblue;
+			background-image: url(1.png);
+		}
+		span {
+			font-size: 64px;
+		}
+		.p2 {background-position: center;}
+		.p3 {
+			background-repeat: no-repeat;
+			background-position: 50% 50%;
+		}
+		.p4 {
+			background-repeat: no-repeat;
+			background-position: 100px;
+		}
+	</style>
+</head>
+<body>
+	<p>
+		<span>background-postion:<br> top left;(default setting)</span>
+	</p>
+	<p class="p2">
+		<span>background-postion:<br>center center;</span>
+	</p>
+	<p class="p3">
+		<span>background-position: 50%</span>
+	</p>
+	<p class="p4">
+		<span>background-position:100px</span>
+	</p>
+</body>
+</html>

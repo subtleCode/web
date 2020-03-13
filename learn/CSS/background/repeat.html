@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>背景图片重复</title>
+	<style type="text/css">
+		p {
+			font-size: 28px;
+			width: 690px;
+			height: 220px;
+			margin: 20px auto;
+			padding: 10px;
+			color: red;
+			border: 4px solid #aaa;
+			background-color: skyblue;
+			background-image: url(1.png);/* 背景图片 */
+		}
+		
+		.norepeat {background-repeat: no-repeat;}
+		.repeat-x {background-repeat: repeat-x;}
+		.repeat-y {background-repeat: repeat-y;}
+		.round{background-repeat: round;}
+		.space{background-repeat:space;}
+
+	</style>
+</head>
+<body>
+	<h2>CSS2</h2>
+	<p class="repeat">background-repeat:repeat(default) </p>
+	<p class="norepeat">background-repeat:norepeat </p>
+	<p class="repeat-x">background-repeat:repeat-x </p>
+	<p class="repeat-y">background-repeat:repeat-y </p>
+	<h2>CSS3</h2>
+	<p class="round">background-repeat:round </p>
+	<p class="space">background-repeat:space</p>
+</body>
+</html>
+

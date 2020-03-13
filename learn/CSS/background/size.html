@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>背景尺寸</title>
+	<style type="text/css">
+		p {
+			margin: 20px auto;
+			padding: 10px;
+			height: 300px;
+			width: 400px;
+			font-size: 36px; 
+			color: red;
+			border: 5px solid skyblue;
+			background-image: url(1.png);
+		}
+		.p1 {background-size: 10%;}
+		.p2 {background-size: 100px 50px;}
+		.p3 {background-size: cover;}
+		.p4 {background-size: contain;}
+		.p3,.p4{background-repeat: no-repeat;} /* 为了看出cover与contain设置 */
+	</style>
+</head>
+<body>
+	<p class="p1">background-size:10%</p>
+	<p class="p2">background-size:100px 50px</p>
+	<p class="p3">background-size:cover</p>
+	<p class="p4">background-size:contain</p>
+</body>
+</html>
