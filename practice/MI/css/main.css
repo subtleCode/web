@@ -2,6 +2,9 @@
 .container {
 	/*border: 1px solid red;*/
 }
+body{
+	height: 1000px;
+}
 /* 全局 */
 *{
 	margin: 0;
@@ -9,18 +12,19 @@
 }
 ul {list-style-type: none;}
 a {text-decoration: none;}
-body{
+body {
 	font:12px/1.5 sans-serif;
+	background-color: #fff;
 }
 
-/* topbar */
+/* 顶部横条 */
 .topbar {
 	height: 40px;
 	line-height: 40px;
 	background-color:#333;
 }
 .topbar ul li {float:left;} /* 头部横条内的所有列表左浮动 */
-.topbar ul li a {padding:0 .5em;}
+.topbar ul li a {padding:0 .6em;}
 .topbar ul li a:hover{color:white;}
 .topbar ul li + li a{border-left: 1px solid #424242;}
 .topbar a {color: #b0b0b0;}
@@ -36,6 +40,117 @@ body{
 	color: #ff6700;
 	background: white;
 }
+
+/* 头部导航 */
+header {
+	height: 100px;
+	font-size: 1.3em;
+	background: none;
+}
+.hd-logo{
+	display: block;
+	width: 55px;
+	height: 55px;
+	margin-top: 22px;
+	background-color: #ff6700;
+}
+.hd-nav {
+	height: 88px;
+	padding: 12px 0 0 54px;
+}
+.nav-category {
+	width: 127px;
+}
+.hd-nav li{
+	float: left;
+}
+.hd-nav a {
+	display: block;
+	color: #333;
+	padding: 26px 10px 38px;
+}
+.hd-serach {
+	position: relative;
+	width: 296px;
+	height: 50px;
+	margin-top: 25px;
+}
+.hd-serach *{transition:all .2s;}
+.hd-serach input {
+	position: absolute;
+	border: 1px solid #e0e0e0;
+	outline: 0;
+}
+
+.hd-serach input[type=serach] {
+	top: 0;
+	right: 51px;
+	width: 223px;
+	height: 48px;
+	padding: 0 10px;
+}
+.hd-serach input[type=submit] {
+	top: 0;
+	right: 0;
+	width: 52px;
+	height: 50px;
+	background-color: #fff;
+	color: #616161;
+}
+.hd-serach a{
+	color: #757575;
+	font-size: 12px;
+}
+.hd-serach .hot-words {
+	top:12px;
+	right: 62px;
+	position: absolute;
+}
+.hd-serach .hot-words a {
+	display: inline-block;
+	background-color: #eee;
+	padding:0 5px;
+}
+.hd-serach .keyword-list {
+	position: absolute;
+	top: 49px;
+	left: 0;
+	box-sizing: border-box;
+	border: 1px solid #ff6700;
+	width: 245px;
+	display: none;
+}
+.hd-serach .keyword-list a{
+	display: block;
+	padding: 5px 10px;
+
+}
+
+/* 鼠标移动到搜索区域，搜索框与按钮出现边框 */
+.hd-serach:hover>input {border:1px solid #b0b0b0;}
+/* 搜索框聚焦时 */
+.hd-serach input[type=serach]:focus{border: 1px solid #ff6700;}
+.hd-serach input[type=serach]:focus ~ input{border: 1px solid #ff6700;}
+.hd-serach input[type=serach]:focus ~ .hot-words{opacity: 0;}
+.hd-serach input[type=serach]:focus ~ .keyword-list{
+	display:block;
+}
+/* 光标移动到按钮 */
+.hd-serach input[type=submit]:hover{
+	border: 1px solid #ff6700;
+	background-color: #ff6700;
+	color: #fff;
+}
+/* 鼠标移动到热词 */
+.hd-serach .hot-words a:hover {
+	background-color: #ff6700;
+	color: #fff;
+}
+/* 鼠标移动到关键词列表 */
+.hd-serach .keyword-list a:hover{
+	background-color: #eee;
+}
+
 /* 公用 */
 .container {
 	width: 1226px;
