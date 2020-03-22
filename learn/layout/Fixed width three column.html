@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>固定宽度-三栏布局</title>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		#wrapper {
+			width: 960px;
+			margin: 0 auto;
+			border: 1px solid skyblue;
+		}
+		
+		nav {
+			width: 150px;
+			background: #ffed53;
+			float: left;
+		}
+		nav ul {
+			list-style-type:none;
+		}
+
+		article {
+			width: 600px;
+			background: #ffed53;
+			float: left;
+		}
+		.inner {
+			padding: 20px;
+		}
+
+		aside {
+			width: 210px;
+			background: #3f7ccf;
+			float: left;
+		}
+
+		header {
+			text-align: center;
+			background: #f00;
+		}
+		footer {
+			text-align:  center;
+			color: white;
+			background: #000;
+			clear: both;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<header>
+			<h1>A Fixed-Width: three column layout</h1>
+		</header>
+		<nav>
+			<div class="inner">
+				<ul>
+					<li><a href="#">Link A</a></li>
+					<li><a href="#">Link B</a></li>
+					<li><a href="#">Link C</a></li>
+				</ul>
+			</div>
+		</nav>
+		<article>
+			<div class="inner">
+				<h2>Lorem</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio non nulla, blanditiis tempore aliquam, perspiciatis culpa libero iste incidunt dicta, in laudantium accusamus quia laboriosam fugiat, animi quidem. Culpa, facilis?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate excepturi, voluptatibus, quaerat reiciendis laudantium et saepe. Esse reprehenderit unde, dignissimos suscipit expedita, earum nam impedit vel quasi repellendus. Dolore, veniam.</p>
+				<hr>
+				<h2>Ipsum</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, ipsa, itaque. Sapiente possimus amet tenetur iusto inventore in quas quos necessitatibus atque magni animi, excepturi totam, saepe perferendis, mollitia esse. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui aperiam expedita eaque autem ratione dicta obcaecati labore earum, deserunt tenetur odit quisquam numquam, nostrum voluptatem cumque, unde. Illo, ipsam, porro!</p>
+				<hr>			
+				<h2>Dolor</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio non nulla, blanditiis tempore aliquam, perspiciatis culpa libero iste incidunt dicta, in laudantium accusamus quia laboriosam fugiat, animi quidem. Culpa, facilis? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit magni blanditiis a perferendis, enim labore vitae laudantium corrupti quaerat qui perspiciatis cumque sapiente dignissimos beatae in illo, architecto accusantium praesentium.</p>
+			</div>
+		</article>
+		<aside>
+			<div class="inner">
+				<h2>Tenetur</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore dolorem dolores sint magni magnam repellendus ea iusto ipsa. Dolor eligendi, nobis! Veritatis vel magni enim dolore velit dicta, temporibus magnam.</p>
+			</div>
+		</aside>
+		<footer>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, similique necessitatibus. Veniam eum eaque ea, autem aliquid unde temporibus dolore, assumenda accusamus incidunt dignissimos neque porro veritatis corporis quibusdam dolorem.</p>
+		</footer>
+	</div>
+</body>
+</html>
