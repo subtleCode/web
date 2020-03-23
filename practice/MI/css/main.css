@@ -1,0 +1,51 @@
+/* 调试 */
+.container {
+	/*border: 1px solid red;*/
+}
+/* 全局 */
+*{
+	margin: 0;
+	padding: 0;
+}
+ul {list-style-type: none;}
+a {text-decoration: none;}
+body{
+	font:12px/1.5 sans-serif;
+}
+
+/* topbar */
+.topbar {
+	height: 40px;
+	line-height: 40px;
+	background-color:#333;
+}
+.topbar ul li {float:left;} /* 头部横条内的所有列表左浮动 */
+.topbar ul li a {padding:0 .5em;}
+.topbar ul li a:hover{color:white;}
+.topbar ul li + li a{border-left: 1px solid #424242;}
+.topbar a {color: #b0b0b0;}
+.topbar-cart{
+	display: block;
+	text-align: center;
+	height: 40px;
+	width: 120px;
+	margin-left: 15px;
+	background: #424242;
+}
+.topbar-cart:hover{
+	color: #ff6700;
+	background: white;
+}
+/* 公用 */
+.container {
+	width: 1226px;
+	margin: 0 auto;
+}
+.container::before , .container::after { /*清除塌陷*/
+	display: table;	
+	content: " ";
+}
+.container::after {clear: both;}
+	
+.fl {float: left;}
+.fr {float: right;}
