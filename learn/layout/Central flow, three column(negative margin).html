@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>三栏-中部流动 负边距实现</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			text-decoration: none;
+			list-style-type: none;
+		}
+		body {
+			font: 1em sans-serif;
+		}
+		header,footer {
+			text-align: center;
+			color: #fff;
+			padding: 5px 0;
+		}
+		header {background: #3f7ccf;}
+		#main_wrapper {
+			min-width: 600px;
+			max-width: 1100px;
+			margin: 0 auto;
+		}
+		#threecolwrap {
+			float: left;
+			width: 100%;
+		}
+
+		#twocolwrap {
+			float: left;
+			width: 100%;
+			margin-right: -210px;
+		}
+		nav {
+			float: left;
+			width: 150px;
+			padding: 20px 0;
+		}
+		nav > * { margin:0 10px; }
+		article {
+			width: auto;
+			margin-left: 150px;
+			margin-right: 210px;
+			background: #eee;
+			padding: 20px 0;
+		}
+		article > * {
+			margin: 0 20px;
+		}
+		article > h2 {
+			margin-top: 20px;
+		}
+		aside {
+			float: left;
+			width: 210px;
+			background: #ffed53;
+			padding: 20px 0;
+		}
+		aside > * {
+			margin: 0 10px;
+		}
+		footer {
+			clear: both;
+			width: 100%;
+			background: #000;
+		}
+	</style>
+</head>
+<body>
+	<div id="main_wrapper">
+		<!-- 页眉 -->
+		<header>
+			<h1>三栏中部流动布局，负边距实现</h1>
+		</header>
+		<div id="threecolwrap"><!-- 三栏外包装（包括全部三栏） -->
+			<div id="twocolwrap"><!-- 两栏外表包装（包括左栏与中栏） -->
+				<!-- 左栏：导航 -->
+				<nav>
+					<ul>
+						<li><a href="#">Nav link 1</a></li>
+						<li><a href="#">Nav link 2</a></li>
+						<li><a href="#">Nav link 3</a></li>
+					</ul>
+				</nav>
+				<!-- 中栏：区块 -->
+				<article>
+					<h2>Head One</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe beatae repellat, tempora vero temporibus iste ullam consequuntur mollitia illo tenetur quisquam et voluptatum incidunt voluptate quis recusandae, quam facilis nam.</p>
+					<h2>Head Two</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime libero ad mollitia consequatur itaque est, soluta tempora, voluptas pariatur quas voluptatem exercitationem odio tenetur facere cum eum iusto porro excepturi.</p>
+					<h2>Head Three</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde aut nobis, aliquam facilis aliquid nostrum explicabo. Minus repudiandae veritatis delectus, incidunt expedita, sapiente reprehenderit labore ad cum quia quasi officia?</p>
+				</article>
+			</div>
+			<!-- 右栏：侧栏 -->
+			<aside>
+				<h2>Sidebar Area</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi consequuntur nihil cum illo iusto, maiores omnis! Tempora animi iste, unde reprehenderit accusamus quis dolorem distinctio velit minima cumque, quo, error?</p>
+			</aside>
+		</div>
+		<!-- 页脚 -->
+		<footer> 
+			<p>A CSS template from Stylin' with CSS</p>
+		</footer>
+	</div>
+</body>
+</html>
