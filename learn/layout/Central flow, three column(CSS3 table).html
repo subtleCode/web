@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>三栏-中部流动 CSS3单元格实现</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			text-decoration: none;
+			list-style-type: none;
+			box-sizing: border-box;
+		}
+		
+		body {
+			font: 1em sans-serif;
+			color: #fff;
+		}
+		
+
+		header,footer {
+			text-align: center;
+			padding: 5px 0;
+			background:#333;
+		}
+
+		nav,article,aside {
+			display: table-cell;
+		}
+		nav {
+			width: 150px;
+			padding: 10px;
+			background: #555;
+		}
+		article {
+			background: grey;
+		}
+		aside {
+			width: 210px;
+			padding: 10px;
+			background: #888;
+		}
+	</style>
+</head>
+<body>
+		<header>
+			<h1>三栏中部流动布局，CSS3单元格实现</h1>
+		</header>
+		<nav>
+			<ul>
+				<li><a href="#">Nav link 1</a></li>
+				<li><a href="#">Nav link 2</a></li>
+				<li><a href="#">Nav link 3</a></li>
+			</ul>
+		</nav>
+		<article>
+			<h2>Head One</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe beatae repellat, tempora vero temporibus iste ullam consequuntur mollitia illo tenetur quisquam et voluptatum incidunt voluptate quis recusandae, quam facilis nam.</p>
+			<h2>Head Two</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime libero ad mollitia consequatur itaque est, soluta tempora, voluptas pariatur quas voluptatem exercitationem odio tenetur facere cum eum iusto porro excepturi.</p>
+			<h2>Head Three</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde aut nobis, aliquam facilis aliquid nostrum explicabo. Minus repudiandae veritatis delectus, incidunt expedita, sapiente reprehenderit labore ad cum quia quasi officia?</p>
+		</article>
+		<aside>
+			<h2>Sidebar Area</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi consequuntur nihil cum illo iusto, maiores omnis! Tempora animi iste, unde reprehenderit accusamus quis dolorem distinctio velit minima cumque, quo, error?</p>
+		</aside>
+		<footer> 
+			<p>A CSS template from Stylin' with CSS</p>
+		</footer>
+	</div>
+</body>
+</html>
