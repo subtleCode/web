@@ -1,5 +1,9 @@
 var fs = require("fs");
 
-fs.readFile("hello.js",function(error,data){
-	console.log(data.toString());	
+fs.readFile("not file.js",function(error,data){
+	if(error){
+		console.log("file read error");
+	}else{
+		console.log(data.toString());
+	}
 });
