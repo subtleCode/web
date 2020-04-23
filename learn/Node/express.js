@@ -1,15 +1,16 @@
 var express = require('express');
 var app = express();
 
-// 设置公共目录
-app.use("/",express.static("./"));
+// 静态服务
+app.use(express.static("./"));
 
+// 基本路由
 app.get('/', function(request,response){
-	response.end("<h1>Hello Express</h1>");
+	response.send("<h1>Hello Express</h1>");
 });
 
 app.get('/about', function(request,response){
-	response.end("<h1>你好，我是Express</h1>");
+	response.send("你好，我是Express");
 });
 
 
