@@ -2,23 +2,11 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>表单对象属性过滤选择器</title>
+	<title>表单选择器</title>
 	<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script>
 		$(function(){
-			// $("#form1 input:enabled").val("这里发生变化"); // 选中可用的input，改变它们的值
-
-			// $("#form1 input:disabled").val("这里发生变化"); // 选中不可用的input，改变它们的值
-
-			$("#btn1").click(function(){ // 按钮绑定click事件
-				alert($("input:checked").length); // 利用 :checked判断多选框选中的个数
-			});
-
-			$("#btn2").click(function(){ // 按钮绑定click事件
-				alert($("select :selected").text()); // 利用 :selected获取下拉框选中的内容
-			});
-
-
+			alert( "input button select textarea 共计："+$(":input").length );
 		});
 	</script>
 </head>
