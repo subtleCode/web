@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>基本过滤选择器</title>
+	<style>
+		div,span{ 
+			border: 1px solid grey;
+			display: inline-block;
+			padding: 20px;
+			background: white;
+		}
+	</style>
+	<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script>
+		$(function(){
+			var $bgc = "#bbffaa";
+
+			// $("div:first").css("background",$bgc); // 改变第一个div元素的背景色
+
+			// $("div:last").css("background",$bgc); // 改变最后一个div元素的背景色
+			// $("body > :last").css("background",$bgc); // 改变body下最后一个元素的背景色
+
+			// $("div:not(.mini)").css("background",$bgc); // 改变class非mini的div元素的背景色
+
+			// $("body>div:even").css("background",$bgc); // 改变body子div索引为偶数的背景色
+
+			// $("body>div:odd").css("background",$bgc); // 改变body子div索引为奇数的背景色
+
+			// $("body>div:eq(1)").css("background",$bgc); // 改变body子div索引为1的背景色
+
+			// $("body>div:gt(3)").css("background",$bgc); // 改变body子div索引大于3的背景色
+
+			// $("body>div:lt(2)").css("background",$bgc); // 改变body子div索引小于2的背景色
+
+			// $(":header").css("background",$bgc); // 改变所有标题元素的背景色
+
+		});
+	</script>
+</head>
+<body>
+	<h2>过滤选择器</h2>
+	<h3>基本过滤选择器</h3>
+	<div id="one" class="one">
+		id为one，class为one的div
+		<div class="mini">
+			class为mini
+		</div>
+	</div>
+	<div id="two" class="one" title="test">
+		id为two，class为one，title为test的div
+		<div class="mini" title="other">
+			class为mini，title为other的div
+		</div>
+		<div class="mini" title="test">
+			class为mini，title为test的div
+		</div>
+	</div>
+	<div>
+		<div class="mini">class为mini</div>
+		<div class="mini">class为mini</div>
+		<div class="mini">class为mini</div>
+		<div></div>
+	</div>
+	<div>
+		<div class="mini">class为mini</div>
+		<div class="mini">class为mini</div>
+		<div class="mini">class为mini</div>
+		<div class="mini" title="test">class为mini，title为test</div>
+	</div>
+	<div>
+		<input type="hidden">
+		包含input为type为"hidden"的div
+	</div>
+	<span>
+		一个span元素
+	</span>
+</body>
+</html>
