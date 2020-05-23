@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>浮动</title>
+	<style>
+		h1,h2,h3{clear:both;}
+	</style>
+</head>
+<body>
+	<h1>浮动的初衷是文字环绕</h1>
+	<div style="width:400px;">
+		<img src="https://www.baidu.com/img/flexible/logo/pc/result.png" style="float:left;">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus voluptas alias aspernatur beatae modi soluta incidunt cumque laboriosam, quisquam nostrum velit asperiores quas suscipit possimus amet officia, animi placeat in	
+	</div>
+	
+	<h1>浮动的特性</h1>
+	
+	<h2>破坏性</h2>
+	<div style="border:1px solid skyblue;">
+		<img src="https://www.baidu.com/img/flexible/logo/pc/result.png" style="float:left;">
+	</div>
+	<h3>当div中有文字时，文字会将div撑起</h3>
+	<div style="width:400px;border:1px solid black">
+		<img src="https://www.baidu.com/img/flexible/logo/pc/result.png" style="float:left;">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus voluptas alias aspernatur beatae modi soluta incidunt cumque laboriosam, quisquam nostrum velit asperiores quas suscipit possimus amet officia, animi placeat in	
+	</div>
+	
+	<h2>包裹性</h2>
+	<div style="border:1px solid red;float:left;">
+		Hello world!
+	</div>
+
+	<h2>浮动块元素</h2>
+	<div>
+		<div style="float:left; width: 200px; height: 200px; background: skyblue;"></div>
+		<div style="display:inline-block;width: 200px; height: 200px; background: skyblue;"></div>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit et, deleniti modi tempora aliquam, sapiente, temporibus exercitationem sunt magnam suscipit quod, blanditiis facilis molestiae. Eveniet, asperiores, corporis! Unde, non, repellat?
+	</div>
+</body>
+</html>
