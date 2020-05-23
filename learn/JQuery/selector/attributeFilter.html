@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>属性过滤选择器</title>
+	<style>
+		div,span{ 
+			border: 1px solid grey;
+			display: inline-block;
+			padding: 20px;
+			background: white;
+		}
+	</style>
+	<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script>
+		$(function(){
+			var $bgc = "#bbffaa";
+
+			// $("[title]").css("background",$bgc); // 改变所有拥有title属性的元素的背景色
+
+			// $("[class=one]").css("background",$bgc); // 改变所有class属性值为one的元素的背景色
+
+			// $("body [class!=one]").css("background",$bgc); // 改变所有body元素内class属性值不为one的元素的背景色
+
+			// $("[class^=m]").css("background",$bgc); // 改变所有class属性值以m开头的元素的背景色
+
+			// $("[class$=ni]").css("background",$bgc); // 改变所有class属性值以ni结尾的元素的背景色
+
+			// $("[class*=e]").css("background",$bgc); // 改变所有class属性值含有e的元素的背景色
+
+			// $("[class|=en]").css("background",$bgc); // 改变所有class属性值为en或以en为前缀的元素的背景色
+
+			// $("[class~=en]").css("background",$bgc); // 改变所有class属性值空格分隔后有cn的元素的背景色
+
+			// $("div[class=one][id=two]").css("background",$bgc); // 改变class为one，id为two的div元素的背景色
+		});
+	</script>
+</head>
+<body>
+	<div id="one" class="one">
+		id为one，class为one的div
+		<div class="mini">
+			class为mini
+		</div>
+	</div>
+	<div id="two" class="one" title="test">
+		id为two，class为one，title为test的div
+		<div class="mini" title="other">
+			class为mini，title为other的div
+		</div>
+		<div class="mini" title="test">
+			class为mini，title为test的div
+		</div>
+	</div>
+	<div>
+		<div class="en cn">class为en cn</div>
+		<div class="mini">class为mini</div>
+		<div class="micn">class为micn</div>
+		<div></div>
+	</div>
+	<div>
+		<div class="en-cn">class为en-cn</div>
+		<div class="mini">class为mini</div>
+		<div class="encn">class为encn</div>
+		<div class="mini" title="test">class为mini，title为test</div>
+	</div>
+	<div>
+		<input type="hidden">
+		包含input为type为"hidden"的div
+	</div>
+	<span>
+		一个span元素
+	</span>
+</body>
+</html>
