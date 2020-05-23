@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>可见性过滤选择器</title>
+	<style>
+		div,span{ 
+			border: 1px solid grey;
+			display: inline-block;
+			padding: 20px;
+			background: white;
+		}
+		input {
+			border: 1px solid red;
+		}
+	</style>
+	<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script>
+		$(function(){
+			var $bgc = "#bbffaa";
+
+
+			// $("input:hidden").attr("type","text"); // 将隐藏input的类型改为text
+			// $("div:hidden").show(); // 显示所有隐藏的div元素，show貌似只能显示display:none的元素
+			// $("#visibility").css("visibility","visible"); //error:无法显示visibility为visible的元素
+		});
+	</script>
+</head>
+<body>
+	<div id="one" class="one">
+		id为one，class为one的div
+		<div class="mini">
+			class为mini
+		</div>
+	</div>
+	<div id="two" class="one" title="test">
+		id为two，class为one，title为test的div
+		<div class="mini" title="other">
+			class为mini，title为other的div
+		</div>
+		<div class="mini" title="test">
+			class为mini，title为test的div
+		</div>
+	</div>
+	<input type="hidden">
+	<div style="visibility:hidden;">
+		visibility:hidden;
+	</div>	
+	<div style="display:none;">
+		display:none;
+	</div>
+
+</body>
+</html>
