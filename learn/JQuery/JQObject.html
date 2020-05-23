@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JQ对象与DOM对象</title>
+	<style>
+		p {
+			display: none;
+		}
+	</style>
+	<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script>
+		// JQ对象 与 DOM对象 相互转换
+		$(function(){
+
+			var $cr = $("#cr"); //通过元素的id获得一个JQ对象
+			var cr = $cr.get(0); //将JQ对象转为DOM对象。
+			
+			var info = document.getElementById("info"); //通过原生JS获取一个DOM对象
+			var $info = $(info); //将DOM对象转为JQ对象。
+
+			$cr.click(function(){
+				if(cr.checked){ //DOM的判断方法
+					$info.show(); //使用JQ的方法展示
+				}else{
+					$info.hide(); //使用JQ的方法隐藏
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<input id="cr" type="checkbox"><label for="cr">接受协议</label>
+	<p id="info">您已经接受了协议</p>
+</body>
+</html>
