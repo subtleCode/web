@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>内容过滤选择器</title>
+	<style>
+		div,span{ 
+			border: 1px solid grey;
+			display: inline-block;
+			padding: 20px;
+			background: white;
+		}
+	</style>
+	<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script>
+		$(function(){
+			var $bgc = "#bbffaa";
+
+			// $("div:contains(title)").css("background",$bgc); // 改变内容中有'title'的div元素的背景色
+
+			// $(":empty").css("background",$bgc); // 改变不包含子元素的空元素的背景色
+
+			// $("div:has(input)").css("background",$bgc); // 改变含有input元素的div元素的背景色
+
+			// $("div:parent").css("background", $bgc); // 改变含有子元素或文本元素的div元素的背景色
+
+		});
+	</script>
+</head>
+<body>
+	<div id="one" class="one">
+		id为one，class为one的div
+		<div class="mini">
+			class为mini
+		</div>
+	</div>
+	<div id="two" class="one" title="test">
+		id为two，class为one，title为test的div
+		<div class="mini" title="other">
+			class为mini，title为other的div
+		</div>
+		<div class="mini" title="test">
+			class为mini，title为test的div
+		</div>
+	</div>
+	<div>
+		<div class="mini">class为mini</div>
+		<div class="mini">class为mini</div>
+		<div class="mini">class为mini</div>
+		<div></div>
+	</div>
+	<div>
+		<div class="mini">class为mini</div>
+		<div class="mini">class为mini</div>
+		<div class="mini">class为mini</div>
+		<div class="mini" title="test">class为mini，title为test</div>
+	</div>
+	<div>
+		<input type="hidden">
+		包含input为type为"hidden"的div
+	</div>
+	<span>
+		一个span元素
+	</span>
+</body>
+</html>
