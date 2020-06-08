@@ -1,0 +1,50 @@
+body {
+	background-color: #f4f4f4;
+}
+
+/* top-bar 部分 */
+#top-bar {
+	background-color: #223079;
+	cursor: pointer;
+}
+#top-bar .w {
+	background-image: url("../img/top-bar-bg.png.webp");
+	height: 80px;
+}
+
+#top-bar .fr {
+	padding: 20px;
+}
+#top-bar .fr a{
+	margin-right: 10px;
+}
+
+#top-bar .close {
+	float: right;
+	text-align: center;
+	line-height: 20px;
+	opacity: 0.3;
+	display: block;
+	height: 20px;
+	width: 20px;
+	background-color: #2d2d2d;
+	color: #fff;
+	font-size: 24px;
+}
+
+/* shortcut（快速导航栏）部分 */
+
+/* header 部分 */
+
+/* tools */
+.w {
+	width: 1190px; /* 版心 */
+	margin: 0 auto;
+}
+
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
