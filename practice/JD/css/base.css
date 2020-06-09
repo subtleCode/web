@@ -1,45 +1,189 @@
 body {
 	background-color: #f4f4f4;
+	font: 12px/1.5 Microsoft YaHei;
+	height: 2000px;
 }
 
+ul {
+	list-style:none;
+	margin: 0;
+	padding: 0;
+}
+a {
+	text-decoration: none;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+.main-color{color:#f10215!important;}
 /* top-bar 部分 */
 #top-bar {
-	background-color: #223079;
+	background-color: rgb(211, 50, 130);
 	cursor: pointer;
 }
 #top-bar .w {
 	background-image: url("../img/top-bar-bg.png.webp");
 	height: 80px;
+	position: relative;
+}
+#top-bar .w >a { /*左边的图片*/
+	position: absolute;
+	height: 100%;
 }
 
-#top-bar .fr {
-	padding: 20px;
+#top-bar .fr { /* 右边的按钮项 */
+	text-align: right;
+	padding-right: 20px;
+	height: 100%;
+	line-height: 80px;
 }
-#top-bar .fr a{
+#top-bar .fr a {
+	width: 116px;
+	height: 46px;
+	display: inline-block;
+	line-height: 100%;
 	margin-right: 10px;
+	vertical-align: middle;
 }
-
-#top-bar .close {
-	float: right;
-	text-align: center;
-	line-height: 20px;
-	opacity: 0.3;
-	display: block;
+#top-bar #close { /* 关闭top-bar的按钮 */
+	position: absolute;
+	top: 5px;
+	right: 0;
 	height: 20px;
 	width: 20px;
 	background-color: #2d2d2d;
 	color: #fff;
-	font-size: 24px;
+	text-align: center;
+	line-height: 20px;
+	opacity: .3;
+	font-style: normal;
 }
 
 /* shortcut（快速导航栏）部分 */
+#shortcut {
+	border-bottom: 1px solid #ddd;
+	background-color: #e3e4e5;
+}
+#shortcut a {
+	color: #999;
+}
+#shortcut a:hover {
+	color: #e33333;	
+}
+
+#shortcut .w {
+	height: 30px;
+	line-height: 30px;
+	color: #999;
+}
+
+#shortcut .fl { /* 所在位置 */
+	
+}
+
+#shortcut .fr{ /* shortcut中的nav */
+	
+}
+
+#shortcut .fr li{
+	float: left;
+}
+
+
+#shortcut .spacer { /* 小竖线 */
+	width: 1px;
+	height: 10px;
+	background-color: #ccc;
+	margin: 11px 5px;
+}
 
 /* header 部分 */
+
+#header {
+	position: relative;
+	background: #fff;
+	border-bottom: 1px solid #ddd;
+}
+#header #logo,#serach{ /* header所有部分采用绝对定位 */
+	position: absolute;
+}
+
+#header .w {
+	height: 140px;
+}
+
+#header #logo { /* logo部分 */
+	height: 120px;
+	width: 190px;
+	top: 10px;
+}
+#header #logo a{
+	display: block;	
+	height: 120px;
+	width: 190px;	
+	font-size: 0; /*消除字体*/
+	background-position: 0 0;
+	background: url("../img/logo.png") no-repeat;
+}
+#header #serach { /* 表单域 */
+	height: 32px;
+	width: 546px;
+	left: 260px;
+	top: 25px;
+	border: 2px solid #e2231a;
+}
+#header #serach input,button {
+	border: 0;
+	outline: none;
+}
+
+#header #serach input { /* 搜索框 */
+	left: 0;
+	line-height: 26px;
+	height: 26px;
+	width: 425px;
+	padding: 2px 42px 2px 17px;
+}
+#header #serach .photo-search-btn{ /* 照片搜索 */
+	position: absolute;
+	width: 19px;
+	height: 15px;
+	top: 10px;
+	right: 75px;
+	border: 1px solid red;
+}
+#header #serach button{
+	right: 0;
+	height: 32px;
+	width: 58px;
+	background-color: #e1251b;
+	color: #fff;
+}
+
+#header #car { /* 购物车 */
+
+}
+#header #hotwords{ /* 热词 */
+
+}
+#header #hotwords li {
+	float: left;
+}
+#header #nav{ /* nav */
+
+}
+#header #nav li {
+	float: left;
+}
+#header #treasure{ /* 活动区域 */
+
+}
 
 /* tools */
 .w {
 	width: 1190px; /* 版心 */
-	margin: 0 auto;
+	margin: auto;
 }
 
 .fl {
