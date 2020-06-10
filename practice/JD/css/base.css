@@ -49,6 +49,14 @@ i#close { /* 关闭图标 */
 i.serach { /* 搜索图标 */
 	font-size: 16px;
 }
+i.photo-search-btn {
+	font-size: 14px;
+	color: #9f9f9f;
+}
+i.car { /* 购物车图标 */
+	font-size: 14px;
+}
+
 /* top-bar 部分 */
 #top-bar {
 	background-color: rgb(211, 50, 130);
@@ -130,19 +138,16 @@ i.serach { /* 搜索图标 */
 /* header 部分 */
 
 #header {
-	position: relative;
 	background: #fff;
 	border-bottom: 1px solid #ddd;
 }
-#header #logo,#serach{ /* header所有部分采用绝对定位 */
-	position: absolute;
-}
-
 #header .w {
+	position: relative;
 	height: 140px;
 }
 
 #header #logo { /* logo部分 */
+	position: absolute;
 	height: 120px;
 	width: 190px;
 	top: 10px;
@@ -156,58 +161,139 @@ i.serach { /* 搜索图标 */
 	background: url("../img/logo.png") no-repeat;
 }
 #header #serach { /* 表单域 */
+	position: absolute;
 	height: 32px;
 	width: 546px;
 	left: 260px;
 	top: 25px;
 	border: 2px solid #e2231a;
 }
+
 #header #serach input,button {
 	border: 0;
 	outline: none;
 }
-
 #header #serach input { /* 搜索框 */
 	left: 0;
 	line-height: 26px;
 	height: 26px;
 	width: 425px;
 	padding: 2px 42px 2px 17px;
-}
-#header #serach .photo-search-btn{ /* 照片搜索 */
-	position: absolute;
-	width: 19px;
-	height: 15px;
-	top: 10px;
-	right: 75px;
-	border: 1px solid red;
+	font-size: 12px;
 }
 #header #serach button{
+	cursor: pointer;
 	right: 0;
 	height: 32px;
 	width: 58px;
 	background-color: #e1251b;
 	color: #fff;
 }
+#header #serach button:hover {
+	background-color: #c81623;	
+}
+
+#header #serach .photo-search-btn{ /* 照片搜索 */
+	position: absolute;
+	height: 15px;
+	width: 19px;
+	line-height: 15px;
+	text-align: center;
+	right: 75px;
+	top: 8px;
+	overflow: hidden;
+}
+#header #serach .photo-search-btn:hover {
+	color: #e1251b;
+}
+
+
 
 #header #car { /* 购物车 */
-
+	position: absolute;
+	display: inline-block;
+	height: 34px;
+	width: 130px;
+	right: 230px;
+	top: 25px;
+	text-align: center;
+	line-height: 34px;
+	border: 1px solid #eee;
+	color: #e1251b;
 }
+
+#header #car .car-number {
+	position: absolute;
+	display: inline-block;
+	color: #fff;
+	width: 10px;
+	height: 10px;
+	left: 28px;
+	top: 2px;
+	text-align: center;
+	line-height: 10px;
+	background: #e1251b;
+	border-radius: 7px;
+	padding: 1px 3px;
+}
+#header #car .car {
+	margin-right: 8px;
+}
+
+#header #car:hover {
+	border-color: #c81623;
+	color: #c81623;
+}
+
+#header #treasure{ /* 活动区域 */
+	position: absolute;
+	right: 0px;
+	bottom: 10px;
+}
+
 #header #hotwords{ /* 热词 */
-
+	position: absolute;
+	left: 260px;
+	top: 65px;
+	width: 550px;
+	height: 20px;
+	line-height: 20px;
 }
+
 #header #hotwords li {
 	float: left;
+	margin-right: 10px;
 }
-#header #nav{ /* nav */
+#header #hotwords a {
+	color: #999;
+}
+#header #hotwords a:hover {
+	color: #c81623;
+}
 
+#header #nav { /* nav */
+	position: absolute;
+	left: 203px;
+	bottom: 0;
+	height: 40px;
 }
 #header #nav li {
 	float: left;
+	margin:0 11px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 15px;
 }
-#header #treasure{ /* 活动区域 */
+#header #nav a {
+	color: #333;
+}
+#header #nav a.main-color{
+	font-weight: 700;
+}
+#header #nav a:hover {
+	color: #c81623;
+}
 
-}
 
 /* tools */
 .w {
