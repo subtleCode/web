@@ -1,7 +1,6 @@
 body {
 	background-color: #f4f4f4;
 	font: 12px/1.5 Microsoft YaHei;
-	height: 2000px;
 	word-spacing: 4px;
 }
 
@@ -293,6 +292,135 @@ i.car { /* 购物车图标 */
 #header #nav a:hover {
 	color: #c81623;
 }
+
+
+
+/* footer */
+#footer {
+	word-spacing:0;
+}
+#footer a {color:#666;}
+#footer a:hover{ color:#c81623; }
+.service {
+	padding: 20px 0;
+	border-bottom: 1px solid #dedede;
+}
+.service ul {
+	height: 42px;
+}
+.service li {
+	float: left;
+	width: 297px;
+	overflow: hidden;
+}
+.service li>*{
+	display: inline-block;
+}
+.service li h5 {
+	position: relative;
+	width: 36px;
+	height: 42px;
+	line-height: 42px;
+	text-align: center;
+	margin-left: 45px;
+}
+.service li p {
+	height: 42px;
+	line-height: 42px;
+	font-size: 18px;
+	font-weight: 700;
+	color: #444;
+	margin-left: 5px;
+}
+.help {
+	padding: 20px 0;
+}
+.help .w {
+	height: 160px;
+	overflow: hidden;
+}
+
+.help-nav {
+	float: left;
+	width: 198px;
+	line-height: 22px;
+}
+.help-nav-title {
+	font-size: 14px;
+	margin-bottom: 5px;
+}
+.help-cover {
+	padding:0 10px;
+}
+.help-cover p {color:#666;}
+.help-cover h5 {
+	text-align: right;
+}
+.help-cover .more {
+	text-align: right;
+}
+
+.copyright .w {
+	border-top: 1px solid #e1e1e1;
+	text-align: center;
+	padding: 15px 0;
+}
+.copyright .split{
+	color: #ccc;
+	margin:0 10px;
+}
+#copyright-info {
+	padding: 10px 0;
+	line-height: 22px;
+	color: #999;
+}
+#copyright-info a {
+	color: #999;
+}
+
+.copyright-auth > a {
+	display: inline-block;
+	height: 32px;
+	width: 103px;
+	margin: 0 3px;
+	overflow: hidden;
+}
+
+/* footer的图标 */
+.service h5,
+.copyright-info-inter i,
+.copyright-auth a{
+	background-repeat: no-repeat;
+	background-image: url("../img/map.png");
+}
+
+.service h5 {
+	text-indent: -999px;
+}
+.service .duo {background-position: 0 -192px;}
+.service .kuai {background-position: -41px -192px;}
+.service .hao {background-position: -82px -192px;}
+.service .sheng {background-position: -123px -192px;}
+
+.copyright-info-inter i{
+	display: inline-block;
+	width: 15px;
+	height: 12px;	
+	margin-right: 10px;
+	vertical-align: -2px;
+}
+.copyright-info-inter .global{background-position: -108px -155px;}
+.copyright-info-inter .rissia{background-position: -168px -155px;}
+.copyright-info-inter .indonesia{background-position: -148px -155px;}
+.copyright-info-inter .spain{background-position: -128px -155px;}
+.copyright-info-inter .thailand{background-position: -108px -172px;}
+
+.copyright-auth a{line-height: 1000px;}
+.copyright-auth .icon1{background-position: -205px -111px;}
+.copyright-auth .icon2{background-position: -205px -74px;}
+.copyright-auth .icon3{background-position: -205px -37px;}
+.copyright-auth .icon4{background-position: -205px 0;}
+.copyright-auth .icon5{background-position: 0 -155px;}
 
 
 /* tools */
