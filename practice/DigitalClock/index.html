@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数码时钟</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		html,body {
+			background-color: pink;
+			height: 100%;
+			width: 100%;
+		}
+		img {
+			width: 100px;
+			height: 100px;
+		}
+		#clock {
+			height: 100%;
+			width: 100%;
+			position: relative;
+			text-align: center;
+			top: 50%;
+			margin-top: -100px;
+		}
+	</style>
+	<script>
+		window.onload = function (){
+			var times = document.getElementsByClassName("time");
+			setTimeImgs(times);
+			var interval = setInterval(function(){
+				setTimeImgs(times);
+			},1000);
+		}
+
+		// 改变图片
+		function setTimeImgs(times){
+			var nowTime = getNowTime();
+			for(var i = 0; i < times.length; i++){
+				times[i].src = "./"+nowTime.charAt(i)+".png";
+			}
+		}
+
+		// 获取当前时间的字符串拼接形式
+		function getNowTime(){
+			var date = new  Date();
+			var hour = date.getHours();
+			var minute = date.getMinutes();
+			var second = date.getSeconds();
+			second = secondDouble(second);
+			return ""+hour+minute+second;
+		}
+
+		// 确保秒钟为两位数
+		function secondDouble(n){
+			if(n > 9) return n;
+			return "0"+n;
+		}
+	</script>
+</head>
+<body>
+<div id="clock">
+	<img class="time" src="./0.png" >
+	<img class="time" src="./0.png" >
+	<img src="./colon.png">
+	<img class="time" src="./0.png" >
+	<img class="time" src="./0.png" >
+	<img src="./colon.png">
+	<img class="time" src="./0.png" >
+	<img class="time" src="./0.png" >
+</div>
+</body>
+</html>
