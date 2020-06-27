@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>条件&循环</title>
+  <script src="./vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <span v-if="seen">
+      <ul>
+        <li v-for="item in array">{{ item.name }}</li>
+      </ul>
+    </span>
+  </div>
+  <script type="text/javascript">
+    var app = new Vue({
+      el:"#app",
+      data:{
+        seen: true,
+        array:[{name:"苹果"},{name:"华为"},{name:"三星"}]
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>组建</title>
+  <script src="./vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <ul>
+      <todo-item
+        v-for="item in list"
+        v-bind:item="item"
+        v-bind:key="item.id"
+      ></todo-item>
+    </ul>
+  </div>
+  <script type="text/javascript">
+    // 定义名为todo-item的组建
+    Vue.component("todo-item",{
+      props:["item"],
+      template: "<li>{{ item.id }} {{ item.text }}</li>"
+    });
+
+    var app = new Vue({
+      el: "#app",
+      data: {
+        list:[
+          { id: 0, text: '蔬菜' },
+          { id: 1, text: '奶酪' },
+          { id: 2, text: '随便其它什么人吃的东西' }
+        ]
+      }
+    });
+  </script>
+</body>
+</html>
