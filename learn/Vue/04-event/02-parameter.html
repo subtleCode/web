@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>参数</title>
+  <script src="../vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <button @click="emptyParameter">没有参数</button>
+    <button @click="singleParameter">一个参数,默认传入event</button>
+    <button @click="multiParameter('多个参数',$event)">多个参数,需要event</button>
+  </div>
+  <script>
+    const app = new Vue({
+      el: "#app",
+      methods: {
+        emptyParameter(){
+          console.log("emptyParameter");
+        },
+        singleParameter(event){
+          console.log("singleParameter---"+event);
+        },
+        multiParameter(message,event){
+          console.log(message+"---"+event);
+        }
+      }
+    });
+  </script>
+</body>
+</html>

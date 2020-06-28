@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>修饰符</title>
+  <script src="../vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h2>.stop,阻止事件冒泡</h2>
+    <div @click="divClick">
+      <button @click.stop="buttonClick">点击</button>
+    </div>
+    <h2>.prevent,阻止默认事件</h2>
+    <form action="errorurl">
+      <button @click.prevent="formClick">提交</button>
+    </form>
+    <h2>特定按键触发事件</h2>
+    <input @keyup.enter="keyupEvent" type="text"><!--只有enter按键弹起,才能触发事件-->
+    <h2>.once单次调用</h2>
+    <button @click.once="onceClick">单次</button>
+  </div>
+  <script type="text/javascript">
+    const app = new Vue({
+      el: "#app",
+      methods: {
+        divClick(){
+          console.log("divClick");
+        },
+        buttonClick(){
+          console.log("buttonClick");
+        },
+        formClick(){
+          console.log("formClick");
+        },
+        keyupEvent(){
+          console.log("keyupEvent");
+        },
+        onceClick(){
+          console.log("onceClick");
+        }
+      }
+    });
+  </script>
+</body>
+</html>
