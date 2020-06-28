@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>computed对比methods</title>
+  <script src="../vue.js"></script>
+</head>
+<body>
+  <!-- computed与methods都被调用了三次.computed只会出现一次打印,而methods会出现三次 -->
+  <div id="app">
+    <h2>{{ fullname }}</h2>
+    <h2>{{ fullname }}</h2>
+    <h2>{{ fullname }}</h2>
+    <h2>{{ getFullname() }}</h2>
+    <h2>{{ getFullname() }}</h2>
+    <h2>{{ getFullname() }}</h2>
+  </div>
+  <script type="text/javascript">
+    const app = new Vue({
+      el: "#app",
+      data: {
+        firstname: "John",
+        lastname: "Wick"
+      },
+      // computed在第一次执行的时候,会将执行结果缓存,除非参与计算的数据发生变更,否则将不会再执行,直接将缓存的结果返回.
+      computed: {
+        fullname: function(){
+          console.log("computed");
+          return this.firstname + " " + this.lastname;
+        }
+      },
+      // methods不管参与计算的数据有没有变更,调用多少次,则执行多少次.
+      methods: {
+        getFullname: function(){
+          console.log("methods");
+          return this.firstname + " " + this.lastname;
+        }
+      }
+    });
+  </script>
+</body>
+</html>

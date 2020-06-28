@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>computed简写</title>
+  <script src="../vue.js"></script>
+</head>
+<body>
+  <!-- 将业务逻辑与界面分离 -->
+  <div id="app">
+    <ul>
+      <li v-for="book in booklist">{{book.id}}-{{book.name}}-{{book.price}}</li>
+    </ul>
+    <h2>总价为：{{totalPrice}}</h2>
+  </div>
+  <script type="text/javascript">
+    const app = new Vue({
+      el: "#app",
+      data: {
+        booklist: [
+          {id:0,name:"Javascript",price:50},
+          {id:1,name:"Java",price:90},
+          {id:2,name:"C",price:33}
+        ]
+      },
+      // 一般使用getter,很少使用getter,所以直接给一个computed指定一个函数,该函数默认作为getter使用.
+      computed: {
+        totalPrice: function(){
+          let totalPrice = 0;
+          for( book of this.booklist ){
+            totalPrice += book.price;
+          }
+          return totalPrice;
+        }
+      }
+    });
+  </script>
+</body>
+</html>

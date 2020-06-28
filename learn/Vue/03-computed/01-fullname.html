@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>拼接全名</title>
+  <script src="../vue.js"></script>
+</head>
+<body>
+  <!-- 以下这种方式拼接全名，也算是将业务逻辑放入了界面中 -->
+  <div id="app">
+    <h2>{{ firstname }} {{ lastname }}</h2>
+    <h2>{{ firstname+" "+lastname }}</h2>
+  </div>
+  <script type="text/javascript">
+    const app = new Vue({
+      el: "#app",
+      data: {
+        firstname: "John",
+        lastname: "Wick"
+      }
+    });
+  </script>
+</body>
+</html>
