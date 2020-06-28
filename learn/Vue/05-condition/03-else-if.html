@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>else-if</title>
+  <script src="../vue.js"></script>
+</head>
+<body>
+
+<!-- <div id="app">
+  <h2 v-if="score >= 90">优秀</h2>
+  <h2 v-else-if="score >= 60">合格</h2>
+  <h2 v-else>不及格</h2>
+</div>
+<script type="text/javascript">
+  const app = new Vue({
+    el: "#app",
+    data: {
+      score: 66
+    }
+  });
+</script> -->
+<!-- else-if很少用到，因为用到基本已经涉及复杂的逻辑结构；html不应该涉及复杂的逻辑结构 -->
+  <div id="app">
+    <h2>{{message}}</h2>
+  </div>
+  <script type="text/javascript">
+    const app = new Vue({
+      el: "#app",
+      data: {
+        score: 90,
+      },
+      computed: {
+        message(){
+          let scoreMessage = "";
+          if( this.score >= 90 ){
+            scoreMessage = "优秀";
+          }else if( this.score >= 60 ){
+            scoreMessage = "合格";
+          }else{
+            scoreMessage = "不合格";
+          }
+          return scoreMessage;
+        }
+      }
+    });
+  </script>
+</body>
+</html>
