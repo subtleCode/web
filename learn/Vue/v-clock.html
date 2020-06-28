@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>v-cloak</title>
+  <script src="./vue.js"></script>
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- v-clock,作为元素的占位属性,会在Vue解析后,移除这个占位属性. -->
+  <div id="app" v-cloak>
+    <h2>{{ message }}</h2>
+  </div>
+  <script type="text/javascript">
+    setTimeout(()=>{ // 一秒后,Vue解析
+      const app = new Vue({
+        el: "#app",
+        data: {
+          message: "Hello world!"
+        }
+      });
+    },1000);
+  </script>
+</body>
+</html>

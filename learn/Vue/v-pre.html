@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>v-pre</title>
+  <script src="./vue.js"></script>
+</head>
+<body>
+  <!-- 拥有v-pre的元素,不会对它的内容进行解析,而是原封不动的展示出来.(注意,依旧会解析html) -->
+  <div id="app" v-pre>
+    <h2>{{ message }}</h2>
+  </div>
+  <script type="text/javascript">
+    const app = new Vue({
+      el: "#app",
+      data: {
+        message: "Hello world!"
+      }
+    });
+  </script>
+</body>
+</html>
