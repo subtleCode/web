@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>v-bind 数组写法</title>
+  <style>
+    .box {
+      height: 100px;
+      width: 100px;
+    }
+    .border {
+      border: 2px skyblue solid;
+    }
+    .bgcolor {
+      background-color: grey;
+    }
+  </style>
+  <script src="../vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- 之前都采用的对象写法，作为属性值，下面这个就是使用数组写法 -->
+    <h2 class="bgcolor" :class="[box,border]" >{{ message }}</h2>
+  </div>
+  <script type="text/javascript">
+    const app = new Vue({
+      el: "#app",
+      data: {
+        message: "Hello world!",
+        box:"box",
+        border:"border"
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>v-bind绑定class</title>
+  <style>
+    .box {
+      height: 100px;
+      width: 100px;
+    }
+    .border {
+      border: 2px skyblue solid;
+    }
+    .bgcolor {
+      background-color: grey;
+    }
+  </style>
+  <script src="../vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!--
+      class与vue绑定的:class会同时作用于元素.
+      key 表示要使用的class名
+      value 则是boolean值，表示是否需要打开这个class
+   -->
+    <h2 class="bgcolor" :class="{box:box,border:border}" >{{ message }}</h2>
+  </div>
+  <script type="text/javascript">
+    const app = new Vue({
+      el: "#app",
+      data: {
+        message: "Hello world!",
+        box:true,
+        border:true
+      }
+    });
+  </script>
+</body>
+</html>

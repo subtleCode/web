@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>v-bind绑定style</title>
+  <script src="../vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- 注意，绑定style时候，样式名不再是连接字符-，而是采用驼峰 -->
+    <h2 class="bgcolor" :style="{fontSize:sizeValue+'px'}" >{{ message }}</h2>
+  </div>
+  <script type="text/javascript">
+    const app = new Vue({
+      el: "#app",
+      data: {
+        message: "Hello world!",
+        sizeValue: 100
+      }
+    });
+  </script>
+</body>
+</html>
