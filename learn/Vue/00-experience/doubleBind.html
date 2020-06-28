@@ -4,17 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>v-once</title>
-  <script src="./vue.js"></script>
+  <title>双向绑定</title>
+  <script src="../vue.js"></script>
 </head>
 <body>
-  <!-- 有了v-once之后，app.message不论怎么改变，页面都不会响应 -->
   <div id="app">
-    <h2>Not v-once:{{ message }}</h2>
-    <h2 v-once>has v-once:{{ message }}</h2>
+    <span>{{ message }}</span>
+    <input type="text" v-model="message">
   </div>
   <script type="text/javascript">
-    const app = new Vue({
+    var app = new Vue({
       el: "#app",
       data: {
         message: "Hello world!"

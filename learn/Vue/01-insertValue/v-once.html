@@ -4,13 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>v-text</title>
-  <script src="./vue.js"></script>
+  <title>v-once</title>
+  <script src="../vue.js"></script>
 </head>
 <body>
-  <!-- 使用v-text插入之,会覆盖到mustache的内容 -->
+  <!-- 有了v-once之后，app.message不论怎么改变，页面都不会响应 -->
   <div id="app">
-    <h2 v-text="message">你好,世界!</h2>
+    <h2>Not v-once:{{ message }}</h2>
+    <h2 v-once>has v-once:{{ message }}</h2>
   </div>
   <script type="text/javascript">
     const app = new Vue({

@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>双向绑定</title>
-  <script src="./vue.js"></script>
+  <title>v-text</title>
+  <script src="../vue.js"></script>
 </head>
 <body>
+  <!-- 使用v-text插入之,会覆盖到mustache的内容 -->
   <div id="app">
-    <span>{{ message }}</span>
-    <input type="text" v-model="message">
+    <h2 v-text="message">你好,世界!</h2>
   </div>
   <script type="text/javascript">
-    var app = new Vue({
+    const app = new Vue({
       el: "#app",
       data: {
         message: "Hello world!"
