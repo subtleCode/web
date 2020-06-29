@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>v-for循环数组</title>
+  <script src="../vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h2>取值</h2>
+    <ul>
+      <li v-for="name in names">{{name}}</li>
+    </ul>
+    <h2>值与下标</h2>
+    <ul>
+      <li v-for="(name,index) in names">{{index+1}}-{{name}}</li>
+    </ul>
+  </div>
+  <script>
+    const app = new Vue({
+      el: "#app",
+      data: {
+        names: ["John Wick", "Geroge", "Tim", "Alice"]
+      }
+    });
+  </script>
+</body>
+</html>

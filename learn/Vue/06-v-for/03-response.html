@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>数组的一些响应方法</title>
+  <script src="../vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="(value,index) in array">{{index+1}}-{{value}}</li>
+    </ul>
+    <button type="button" name="button" @click="push">push new</button>
+    <button type="button" name="button" @click="pop">pop</button>
+    <button type="button" name="button" @click="shift">shift</button>
+    <button type="button" name="button" @click="unshift">unshift new</button>
+    <button type="button" @click="indexChange">index change</button>
+  </div>
+  <script type="text/javascript">
+    const app = new Vue({
+      el: "#app",
+      data: {
+        array: ["a","b","c","d","e"],
+        counter: 0
+      },
+      methods: {
+        push(){
+          this.counter++;
+          this.array.push("new"+this.counter);
+        },
+        pop(){
+          this.array.pop();
+        },
+        shift(){
+          this.array.shift();
+        },
+        unshift(){
+          this.counter ++;
+          this.array.unshift("new"+this.counter);
+        },
+        indexChange(){
+          this.array[0]="change";
+        }
+      }
+    });
+  </script>
+</body>
+</html>
