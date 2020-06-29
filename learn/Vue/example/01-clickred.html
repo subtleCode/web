@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>选中变红</title>
+  <script src="../vue.js"></script>
+  <style>
+    li {
+      cursor: pointer;
+    }
+    .active {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="app">
+    <h2>选择你喜欢的水果</h2>
+    <ul>
+      <li v-for="fruit,index in fruits"
+          :class="{active: currentIndex == index}"
+          @click="clickRed(index)">
+        {{fruit}}
+      </li>
+    </ul>
+  </div>
+
+  <script type="text/javascript">
+    const app = new Vue({
+      el: "#app",
+      data: {
+        fruits:["苹果","香蕉","葡萄","荔枝"],
+        currentIndex: -1
+      },
+      methods: {
+        clickRed(index){
+          this.currentIndex = index;
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
