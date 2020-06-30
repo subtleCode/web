@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>多个选框</title>
+  <script src="../vue.js"></script>
+</head>
+<body>
+
+  <div id="app">
+    <h2>请选择你喜欢的水果</h2>
+    <label for="apple">
+      <input type="checkbox" value="苹果" id="apple" v-model="fruits">苹果
+    </label>
+    <label for="litchi">
+      <input type="checkbox" value="荔枝" id="litchi" v-model="fruits">荔枝
+    </label>
+    <label for="pineapple">
+      <input type="checkbox" value="菠萝" id="pineapple" v-model="fruits">菠萝
+    </label>
+    <label for="banana">
+      <input type="checkbox" value="香蕉" id="banana" v-model="fruits">香蕉
+    </label>
+    <h2>{{fruits}}</h2>
+  </div>
+
+  <script type="text/javascript">
+    const app = new Vue({
+      el: "#app",
+      data: {
+        fruits: ["香蕉","菠萝"] //设置默认值
+      }
+    });
+  </script>
+
+</body>
+</html>

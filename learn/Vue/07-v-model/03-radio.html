@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>radio</title>
+  <script src="../vue.js"></script>
+</head>
+<body>
+
+  <div id="app">
+    <label for="male">
+      <!-- 使用checkbox设置默认值,会作用于绑定的数据 -->
+      <input type="radio" id="male" value="男" v-model="sex">男
+    </label>
+    <label for="female">
+      <input type="radio" id="female" value="女" v-model="sex">女
+    </label>
+    <h2>{{sex}}</h2>
+  </div>
+
+  <script type="text/javascript">
+    const app = new Vue({
+      el: "#app",
+      data: {
+        sex:"男"
+      }
+    });
+  </script>
+
+</body>
+</html>

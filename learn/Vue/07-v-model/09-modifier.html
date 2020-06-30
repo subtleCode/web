@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>修饰符</title>
+  <script src="../vue.js"></script>
+</head>
+<body>
+
+  <div id="app">
+
+    <h1>lazy</h1>
+    <label for="lazy">
+      <input type="text" id="lazy" v-model.lazy="lazyValue"> Your name
+    </label>
+    <h2>{{lazyValue}}</h2>
+
+
+    <h1>number</h1>
+    <label for="i2">
+      <input type="number" v-model.number="numberValue" id="i2"> Your age
+    </label>
+    <h2>表单内容的数据类型为:{{typeof numberValue}}</h2>
+
+    <h1>trim</h1>
+    <label for="i3">
+      <textarea rows="1" cols="20" v-model.trim="introduction" id="i3"></textarea> introduction
+    </label>
+    <pre>{{introduction}}</pre>
+
+  </div>
+
+  <script type="text/javascript">
+    const app = new Vue({
+      el: "#app",
+      data: {
+        lazyValue:"",
+        numberValue: 0,
+        introduction: ""
+      }
+    });
+  </script>
+
+</body>
+</html>
