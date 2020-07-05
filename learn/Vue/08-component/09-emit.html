@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>emit事件发射</title>
+  <script src="../vue.js"></script>
+</head>
+<body>
+
+  <div id="app">
+    <h2>{{message}}</h2>
+    <cpnt @item-click="changeMessage"></cpnt>
+  </div>
+
+  <template id="categoryList">
+    <div>
+      <button v-for="category in categories" @click="emitClick(category)">{{category.title}}</button>
+    </div>
+  </template>
+
+  <script type="text/javascript">
+
+    const cpnt = {
+      template: "#categoryList",
+      data(){
+        return { // 返回一个对象，对象中只有一个属性categories
+          categories:[
+            {id:0,title:"手机"},
+            {id:1,title:"配件"},
+            {id:2,title:"电脑"},
+            {id:3,title:"生活"}
+          ]
+        }
+      },
+      methods: {
+        emitClick(category){ // 发射事件
+          this.$emit("item-click",category);
+        }
+      }
+    }
+
+    const app = new Vue({
+      el: "#app",
+      data: {
+        message: "未点击"
+      },
+      components: {
+        cpnt
+      },
+      methods: {
+        changeMessage(category){
+          this.message = category
+        }
+      }
+    });
+
+  </script>
+
+</body>
+</html>

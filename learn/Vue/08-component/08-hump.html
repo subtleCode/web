@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>驼峰的问题</title>
+  <script src="../vue.js"></script>
+</head>
+<body>
+
+  <div id="app">
+    <!-- <cpnt :personInfo="info"></cpnt> Vue管理的html中不支持驼峰写法（不包括mustache） -->
+    <!-- 在Vue管理的html使用连缀符号，javascript代码中就可以使用驼峰 -->
+    <cpnt :person-info="info"></cpnt>
+  </div>
+
+  <template id="showObj">
+    <div>
+      <h2>{{personInfo}}</h2>
+    </div>
+  </template>
+
+  <script type="text/javascript">
+
+    // 组件
+    const cpnt = {
+      template: "#showObj",
+      props: {
+        personInfo: Object,
+        default(){ // 也是为了防止多个指针指向同一个区域的问题。
+          return {};
+        }
+      }
+    }
+
+
+    const app = new Vue({
+      el: "#app",
+      data: {
+        info: { // 对象
+          name: "Mr.Sun",
+          age: 22
+        }
+      },
+      components: {
+        cpnt
+      }
+    });
+
+  </script>
+
+</body>
+</html>

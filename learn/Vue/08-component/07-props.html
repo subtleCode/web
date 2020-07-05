@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>props</title>
+  <script src="../vue.js"></script>
+</head>
+<body>
+
+  <div id="app">
+    <cpnt :ctitle="title" :ccontent="content"></cpnt>
+  </div>
+
+  <!-- 模板 -->
+  <template id="tplt">
+    <div>
+      <h2>{{ctitle}}</h2>
+      <p>{{ccontent}}</p>
+    </div>
+  </template>
+
+  <script>
+
+    // 定义组件
+    const cpnt = {
+      template: "#tplt",
+      // 定义组件中的变量，用于接收从父组件中传入的数据
+      // props:["ctitle","ccontent"] 数组形式
+      props: {
+        ctitle: String,
+        ccontent: {
+          type: String,
+          default: "没有内容"
+        }
+      }
+    }
+
+    const app = new Vue({
+      el: "#app",
+      data: {
+        title: "app:标题",
+        content: "app:里面的内容"
+      },
+      components: {
+        // 注册组件
+        cpnt
+      }
+    });
+
+  </script>
+</body>
+</html>

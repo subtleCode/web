@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>父子组件</title>
+  <script src="../vue.js"></script>
+</head>
+<body>
+
+  <div id="app">
+    <pcomponent></pcomponent>
+  </div>
+
+
+  <script>
+
+    // 创建子组件
+    const ccomponent = Vue.extend({
+      template: `
+        <div>
+          <h2>子组件</h2>
+        </div>
+      `
+    });
+
+    // 创建父组件
+    const pcomponent = Vue.extend({
+      template: `
+        <div>
+          <h2>父组件</h2>
+          <ccomponent></ccomponent>
+        </div>
+      `,
+      components: {
+        ccomponent // 在父组件中注册子组件
+      }
+    });
+
+    const app = new Vue({
+      el: "#app",
+      components: {
+        pcomponent // 注册父组件
+      }
+    });
+
+  </script>
+
+
+
+
+</body>
+</html>

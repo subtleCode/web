@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>局部组件与全局组件</title>
+  <script src="../vue.js"></script>
+</head>
+<body>
+
+  <div id="app">
+      <h1>app1</h1>
+      <cpnt></cpnt>
+      <local></local>
+  </div>
+  <hr>
+  <div id="app2">
+      <h1>app2</h1>
+      <cpnt></cpnt>
+      <!-- <local></local>  报错-->
+  </div>
+
+  <script>
+
+
+    // 需要被组件化的html代码
+    const htmlCode = `
+      <div>
+        <h2>全局组件</h2>
+        <p>使用Vue.component()注册</p>
+      </div>
+    `;
+    // 组件构造器创建组件
+    const component = Vue.extend({
+      template:htmlCode
+    });
+    // 注册全局组件
+    Vue.component("cpnt",component);
+
+    // 局部组件
+    const local = Vue.extend({
+      template: `
+        <div>
+          <h2>局部组件</h2>
+          <p>在Vue实例的options对象的component元素中注册</p>
+        </div>
+      `
+    });
+
+    const app = new Vue({
+      el: "#app",
+      components: {
+        local //注册局部组件
+      }
+    });
+    const app2 = new Vue({
+      el: "#app2"
+    });
+
+  </script>
+
+
+
+
+</body>
+</html>

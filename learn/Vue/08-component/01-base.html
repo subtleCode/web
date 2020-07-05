@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>模块化基本使用</title>
+  <script src="../vue.js"></script>
+</head>
+<body>
+
+  <div id="app">
+    <cpnt></cpnt>
+    <cpnt></cpnt>
+    <cpnt></cpnt>
+  </div>
+
+
+  <script>
+
+    // 需要被组件化的html代码
+    const htmlCode = `
+      <div>
+        <h2>标题</h2>
+        <p>内容</p>
+      </div>
+    `;
+
+    // 组件构造器创建组件
+    const component = Vue.extend({
+      template:htmlCode
+    });
+
+    // 注册组件：将组件命名为"cpnt"，并由一个组件与之对应。
+    Vue.component("cpnt",component);
+
+    //
+    const app = new Vue({
+      el: "#app"
+    });
+
+  </script>
+
+
+
+
+</body>
+</html>
