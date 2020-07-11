@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>通过$root取得顶级</title>
+  <script src="../vue.js"></script>
+  <style media="screen">
+    #app{
+      border: 1px solid red;
+      padding: 20px;
+    }
+    .style {
+      padding: 20px;
+      border: 1px solid skyblue;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="app">
+    <h1>Vue app</h1>
+    <outer-cpnt class="style"></outer-cpnt>
+  </div>
+
+  <template id="template">
+    <div>
+      <h2>{{name}}</h2>
+      <button @click="showRoot">$root</button>
+      <inner-cpnt class="style"></inner-cpnt>
+    </div>
+  </template>
+  <template id="template2">
+    <div>
+      <h2>{{name}}</h2>
+      <button @click="showRoot">$root</button>
+    </div>
+  </template>
+
+
+  <script>
+    const app = new Vue({
+      el: "#app",
+      data: {
+        name: "Vue root"
+      },
+      components:{
+        outerCpnt:{ // 外层组件
+          template: "#template",
+          data(){
+            return {
+              name: "outer component"
+            }
+          },
+          methods: {
+            showRoot(){
+              console.log(this.$root.name);
+            }
+          },
+          components:{
+            innerCpnt:{ // 内存组件
+              template: "#template2",
+              data(){
+                return {
+                  name:"inner component"
+                }
+              },
+              methods: {
+                showRoot(){
+                  console.log(this.$root.name);
+                }
+              }
+            }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

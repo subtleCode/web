@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>通过$parent取得上一级</title>
+  <script src="../vue.js"></script>
+  <style media="screen">
+    .style {
+      margin-left: 100px;
+      margin-bottom: 20px;
+      border: 1px solid skyblue;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="app">
+    <outer-cpnt class="style"></outer-cpnt>
+  </div>
+
+  <template id="template">
+    <div>
+      <h2>{{name}}</h2>
+      <button @click="showParent">$parent</button>
+      <inner-cpnt class="style"></inner-cpnt>
+    </div>
+  </template>
+
+  <script>
+    const app = new Vue({
+      el: "#app",
+      data: {
+        name: "Vue root"
+      },
+      components:{
+        outerCpnt:{ // 外层组件
+          template: "#template",
+          data(){
+            return {
+              name: "outer component"
+            }
+          },
+          methods: {
+            showParent(){
+              console.log(this.$parent.name);
+            }
+          },
+          components:{
+            innerCpnt:{ // 内存组件
+              template: "#template",
+              data(){
+                return {
+                  name:"inner component"
+                }
+              },
+              methods: {
+                showParent(){
+                  console.log(this.$parent.name);
+                }
+              }
+            }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

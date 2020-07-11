@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>通过$children或$refs直接访问子组件</title>
+  <script src="../vue.js"></script>
+</head>
+<body>
+
+  <div id="app">
+    <cpnt></cpnt>
+    <cpnt></cpnt>
+    <cpnt ref="target"></cpnt>
+    <button @click="showInfo">$children</button>
+    <button @click="refShow">$refs</button>
+  </div>
+
+  <template id="template">
+    <div>
+      <h2>A component</h2>
+    </div>
+  </template>
+
+  <script type="text/javascript">
+    const app = new Vue({
+      el: "#app",
+      methods:{
+        showInfo(){ // 通过$children的方式访问
+          console.log(this.$children[0].message);
+          this.$children[0].showMessage();
+        },
+        refShow(){ // 通过$ref的方式访问
+          console.log(this.$refs.target.message);
+          this.$refs.target.showMessage();
+        }
+      },
+      components:{
+        cpnt:{
+          template: "#template",
+          data(){
+            return {
+              message: "Hello Vue"
+            }
+          },
+          methods:{
+            showMessage(){
+              console.log(this.message);
+            }
+          }
+        }
+      }
+    });
+
+  </script>
+
+</body>
+</html>
